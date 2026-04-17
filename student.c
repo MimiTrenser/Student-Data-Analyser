@@ -53,7 +53,6 @@ bool studentAdd(student* pstInfo)
         return STATUS_ERROR;
     }
 
-
     return STATUS_SUCCESS;
 }
 bool studentCalcAverage(student* pstInfo, float* pfAvg)
