@@ -166,6 +166,7 @@ bool menuListSortByName(void)
 }
 
 bool menuListSortByRoll(void)
+{
     printf("Sorting students by roll number\n");
 
     if(studentGetSortedByRoll())
@@ -183,6 +184,7 @@ bool menuListSortByRoll(void)
 }
 
 bool menuListSortByRank(void)
+{
     printf("Sorting students by rank\n");
 
     if(studentGetSortedByRank())
@@ -199,7 +201,6 @@ bool menuListSortByRank(void)
     return STATUS_SUCCESS;
 }
 
-//Main Menu
 bool menuStudentOverview(void)
 {
     printf("Student Overview\n");
