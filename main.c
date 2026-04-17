@@ -4,7 +4,6 @@
 #include "menu.h"
 #include "student.h"
 
-
 int main() 
 {
     status status = STATUS_ERROR;
