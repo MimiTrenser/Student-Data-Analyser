@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "student.h"
 
-static student students[];
+static student students[];//
 static uint32_t studentCount = 0;
 
 bool studentDeleteByName(uint8_t* pucName)

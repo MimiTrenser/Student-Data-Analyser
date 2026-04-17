@@ -50,10 +50,13 @@ DeleteFunction deleteMenuFunctions[] =
 #define DELETE_MENU_SIZE (sizeof(deleteMenuFunctions) / sizeof(DeleteFunction))
 
 // Delete Student Menu
-bool menuDeleteByName(void)		// Ask name, and delete student
+bool menuDeleteByName(void)
 {
+
     printf("Enter the name to delete: ");
+
     char name[MAX_NAME_LENGTH];
+
     scanf("%s", name);
 
     if(studentDeleteByName((uint8_t*)name))
@@ -64,15 +67,18 @@ bool menuDeleteByName(void)		// Ask name, and delete student
     else
     {
         printf("Failed to delete student.\n");
+
         return STATUS_ERROR;
     }
 
     return STATUS_SUCCESS;
 }
-bool menuDeleteByRoll(void)		// Ask Roll, and delete student
+bool menuDeleteByRoll(void)
 {
     printf("Enter the roll number to delete: ");
+
     uint32_t rollNumber = 0;
+
     scanf("%u", &rollNumber);
 
     if(studentDeleteByRoll(rollNumber))
@@ -88,11 +94,14 @@ bool menuDeleteByRoll(void)		// Ask Roll, and delete student
 
     return STATUS_SUCCESS;
 }
-bool menuDeleteAll(void)			// Delete all
+bool menuDeleteAll(void)
 {
     printf("Confirmation for deleting all students (y/n): ");
+
     char confirmation = 0;
+
     scanf(" %c", &confirmation);
+
     if(confirmation == 'y' || confirmation == 'Y')
     {
         if(studentDeleteAll())
@@ -111,14 +120,17 @@ bool menuDeleteAll(void)			// Delete all
         printf("Deletion of all students cancelled.\n");
         return STATUS_SUCCESS;
     }
+
     return STATUS_SUCCESS;
 }
 
-// List Student Menu
-bool menuListSearchByName(void)	// Ask name, and show result
+
+bool menuListSearchByName(void)
 {
     printf("Enter the name to search: ");
+
     char name[MAX_NAME_LENGTH];
+
     scanf("%s", name);
 
     if(studentGetName(name) == 0)
@@ -131,9 +143,11 @@ bool menuListSearchByName(void)	// Ask name, and show result
         printf("Student found : %s\n", name);
         return STATUS_SUCCESS;
     }
+
+    return STATUS_SUCCESS;
 }
 
-bool menuListSortByName(void)		// Show all student list sorted by Name(Alphabetically)
+bool menuListSortByName(void)
 {
     printf("Sorting students by name\n");
 
@@ -151,8 +165,7 @@ bool menuListSortByName(void)		// Show all student list sorted by Name(Alphabeti
     return STATUS_SUCCESS;
 }
 
-bool menuListSortByRoll(void)		// Show all student list sorted by Roll number
-{
+bool menuListSortByRoll(void)
     printf("Sorting students by roll number\n");
 
     if(studentGetSortedByRoll())
@@ -169,8 +182,7 @@ bool menuListSortByRoll(void)		// Show all student list sorted by Roll number
     return STATUS_SUCCESS;
 }
 
-bool menuListSortByRank(void)		// Show all student list sorted by Rank
-{
+bool menuListSortByRank(void)
     printf("Sorting students by rank\n");
 
     if(studentGetSortedByRank())
@@ -188,7 +200,7 @@ bool menuListSortByRank(void)		// Show all student list sorted by Rank
 }
 
 //Main Menu
-bool menuStudentOverview(void) // Show how many students are added, their average marks
+bool menuStudentOverview(void)
 {
     printf("Student Overview\n");
 
@@ -220,11 +232,11 @@ bool menuStudentOverview(void) // Show how many students are added, their averag
     return STATUS_SUCCESS;
 }
 
-bool menuAddStudent(void)		// Ask name, roll number, Marks of 10 subjects, student Address(Dyanamic size), calc sum of marks, average, grades of each and Rank
+bool menuAddStudent(void)
 {
     student* pstInfo = NULL;
 
-    PRINTF("Enter student details:\n");
+    printf("Enter student details:\n");
     printf("Name: ");
     char name[MAX_NAME_LENGTH];
     scanf("%s", name);
