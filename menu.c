@@ -201,6 +201,7 @@ bool menuListSortByRank(void)
     return STATUS_SUCCESS;
 }
 
+
 bool menuStudentOverview(void)
 {
     printf("Student Overview\n");
